@@ -77,7 +77,7 @@ function fin()
     // deshabilitamos el casilla de entrar el numero, y el
     // boton de enviar
     document.getElementById("numero").disabled=true;
-    document.getElementById("btnEnviar").disabled=true;
+    document.getElementById("btnEnvoi").disabled=true;
 }
 
 // Simple función para validar un numero
