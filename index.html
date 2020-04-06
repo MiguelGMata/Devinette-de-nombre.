@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>devinette de nombre entre 1 y 100</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<header>
+    <h1>Devinez vous un nombre compris entre 1 et 100</h1>
+    
+    <form onsubmit="return devinette()">
+        Indique le nombre de tentatives possibles:
+        <input type="text" name="numeroResultat" id="numeroResultat">
+        <br>
+        <br>Indique un nombre entre 1 et 100:
+        <input type="text" name="numero" id="numero" disabled>
+        <br>
+        <br><input type="submit" value="Enviar" id="btnEnviar">
+    </form>
+    
+    <div id="reponses"></div>
+</header>
+</body>
+</html>
