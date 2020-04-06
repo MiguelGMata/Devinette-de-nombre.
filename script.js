@@ -46,14 +46,14 @@ function devinette()
                     // has acertado
 
                     // Añadimos un texto a las respuestas
-                    reponses+="<br><span class='acertado'>"+numero+" - BRAVO!!! VOUS AVEZ DEVINÉ!!!</span>";
+                    reponses+="<br><span class='deviné'>"+numero+" - BRAVO!!! VOUS AVEZ DEVINÉ!!!</span>";
 
                     fin()
                 }
                 // vaciamos el valor del numero
                 document.getElementById("numero").value="";
             }else{
-                reponses+="<br><span class='error'>"+numero+" - Il doit s'agir d'une valeur numérique comprise entre 1 et 100</span>";
+                reponses+="<br><span class='erreur'>"+numero+" - Il doit s'agir d'une valeur numérique comprise entre 1 et 100</span>";
             }
         }else{
             reponses+="<br><span class='fin'> VOUS N'AVEZ PAS DEVINÉ!!! Le nombre c'est "+numeroDevinette+"</span>";

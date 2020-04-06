@@ -10,14 +10,14 @@ h1 {
     font-size: 30;
     color: blue;
 }
-.acertado {
+.deviné {
 color:#f00;
 font-weight:bold;
 }
 .fin {
     font-weight:bold;
 }
-.error {
+.erreur {
     color:#ccc;
 }
                                                                                                                                                       
