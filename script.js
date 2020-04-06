@@ -1,10 +1,10 @@
-// buscamos un numero aleatorio entre 1 y 100
+// on cherche un nombre aléatoire entre 1 et 100
 var numeroDevinette=Math.floor((Math.random()*100)+1);
 var compteursResultat=0;
 
 function devinette()
 {
-    // obtenemos el numero de respuestas posibles
+    // on obtient le nombre de réponses possibles
     var numeroResultat=document.getElementById("numeroResultat").value;
 
     if(document.getElementById("numeroResultat").disabled==false)
@@ -16,41 +16,41 @@ function devinette()
             document.getElementById("numero").focus();
         }
     }else{
-        // obtenemos el contenido del div que contiene las respuestas
+        // nous obtenons le contenu de la div qui contient les réponses
         var reponses=document.getElementById("reponses").innerHTML;
 
         if(compteursResultat<numeroResultat)
         {
-            // obtenemos el numero introducido por el usuario
+            // nous obtenons le numéro entré par l'utilisateur
             var numero=document.getElementById("numero").value;
 
             if(isNumber(numero) && numero>0 && numero<100)
             {
-                // aumentanos el numero de la respuesta dada
+                // augmenter le nombre de réponses données
                 compteursResultat+=1;
 
                 if(numero>numeroDevinette)
                 {
-                    // El numero es superior
+                    // Le nombre est plus élevé
 
-                    // Añadimos un texto a las respuestas
+                    // Nous ajoutons un texte aux réponses
                     reponses+="<br>"+numero+" - Le nombre que vous recherchez est inférieur";
                     document.getElementById("numero").focus();
                 }else if(numero<numeroDevinette){
-                    // El numero es inferior
+                    // Le nombre est inférieur
 
-                    // Añadimos un texto a las respuestas
+                    // Nous ajoutons un texte aux réponses
                     reponses+="<br>"+numero+" - Le nombre que vous recherchez est superieur";
                     document.getElementById("numero").focus();
                 }else{
                     // has acertado
 
-                    // Añadimos un texto a las respuestas
+                    // Nous ajoutons un texte aux réponses
                     reponses+="<br><span class='deviné'>"+numero+" - BRAVO!!! VOUS AVEZ DEVINÉ!!!</span>";
 
                     fin()
                 }
-                // vaciamos el valor del numero
+                // on vide la valeur du nombre
                 document.getElementById("numero").value="";
             }else{
                 reponses+="<br><span class='erreur'>"+numero+" - Il doit s'agir d'une valeur numérique comprise entre 1 et 100</span>";
@@ -61,26 +61,26 @@ function devinette()
             fin()
         }
 
-        // ponemos nuevamente todas las respuestas
+        // on remet toutes les réponses
         document.getElementById("reponses").innerHTML=reponses;
     }
 
-    // devolvemos false para que el formulario no envie los valores
+    // Nous retournons false pour que le formulaire n'envoie pas les valeurs
     return false;
 }
 
-// Funcion que se ejecuta al finalizar el juego
-// ya sea por haber descubierto el numero o por finalizar el numero de
-// intentos
+// Fonction qui s'exécute à la fin du jeu
+// soit pour avoir découvert le nombre, soit pour finaliser le nombre de
+// tentatives
 function fin()
 {
-    // deshabilitamos el casilla de entrar el numero, y el
-    // boton de enviar
+    // désactive la case pour saisir le numéro et le
+    // bouton soumettre
     document.getElementById("numero").disabled=true;
     document.getElementById("btnEnvoi").disabled=true;
 }
 
-// Simple función para validar un numero
+// Fonction simple pour valider un nombre
 function isNumber(n)
 {
     return !isNaN(parseFloat(n)) && isFinite(n);
